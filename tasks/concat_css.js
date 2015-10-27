@@ -71,7 +71,9 @@ module.exports = function(grunt) {
             if (parts[i] === '..') {
               computedParts.pop();
             } else {
-              computedParts.push(parts[i]);
+              if (parts[i] !== '.') {
+                computedParts.push(parts[i]);
+              }
             }
           }
           return computedParts.join('/');
